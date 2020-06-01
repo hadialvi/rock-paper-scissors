@@ -1,0 +1,40 @@
+<script>
+function computerPlay() {
+	let cpuNum = (Math.random() * 3);
+  return cpuNum < 1 ? "Rock" : cpuNum < 2 ? "Paper" : "Scissors";
+  }
+function playRound(playerSelection , computerSelection) {
+  if (playerSelection == "rock") {
+    if (computerSelection == "rock") {
+      return "It's a draw!"
+    }
+    else if (computerSelection == "paper") {
+      return "You lose! Paper beats Rock!"
+    }
+    else if (computerSelection == "scissors")
+      return "You win! Rock beats Scissors!"
+    }
+   else if (playerSelection == "paper") {
+    if (computerSelection == "paper") {
+      return "It's a draw!"
+    }
+    else if (computerSelection == "scissors") {
+      return "You Lose! Scissors beats Paper!"
+    }
+    else if (computerSelection == "rock") {
+      return "You win! Paper beats Rock!"
+    }
+  }
+  else if (playerSelection == "scissors") {
+    if (computerSelection == "scissors") {
+      return "It's a draw!"
+    }
+    else if (computerSelection == "rock") {
+      return "You lose! Rock beats Scissors!"
+    }
+    else if (computerSelection == "paper") {
+      return "You win! Scissors beat Paper"
+    }
+   }
+ }
+</script>
