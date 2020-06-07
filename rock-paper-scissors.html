@@ -1,10 +1,14 @@
 <script>
+// Function to pick randomly
 function computerPlay() {
 	let cpuNum = (Math.random() * 3);
-  return cpuNum < 1 ? "rock" : cpuNum < 2 ? "paper" : "scissors";
+	return cpuNum < 1 ? "rock" : cpuNum < 2 ? "paper" : "scissors";
 }
 let cpuScore = 0;
 let playerScore = 0;
+
+// Function to play a single round
+
 function playRound(playerSelection , computerSelection) {
   
   playerSelection = prompt("Choose between Rock, Paper or Scissors!" , "")
@@ -53,6 +57,9 @@ function playRound(playerSelection , computerSelection) {
     }
    }
  }
+
+// Function to figure out who wins
+
 function getScore() {
    if (cpuScore == playerScore) {
     return "Welp, the intense game concludes with an anticlimactic draw! You both lose!";
@@ -65,6 +72,9 @@ function getScore() {
   }
   return;
 }
+
+// Function to play a game of 5 rounds
+
 function game() {
   console.log(playRound());
   console.log(playRound());
