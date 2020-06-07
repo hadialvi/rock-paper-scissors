@@ -1,40 +1,77 @@
 <script>
 function computerPlay() {
 	let cpuNum = (Math.random() * 3);
-  return cpuNum < 1 ? "Rock" : cpuNum < 2 ? "Paper" : "Scissors";
-  }
+  return cpuNum < 1 ? "rock" : cpuNum < 2 ? "paper" : "scissors";
+}
+let cpuScore = 0;
+let playerScore = 0;
 function playRound(playerSelection , computerSelection) {
+  
+  playerSelection = prompt("Choose between Rock, Paper or Scissors!" , "")
+  
+  computerSelection = computerPlay();
+  
+  playerSelection = playerSelection.toLowerCase();
+  
   if (playerSelection == "rock") {
     if (computerSelection == "rock") {
-      return "It's a draw!"
+      return "It's a draw!";
     }
     else if (computerSelection == "paper") {
-      return "You lose! Paper beats Rock!"
-    }
-    else if (computerSelection == "scissors")
-      return "You win! Rock beats Scissors!"
-    }
-   else if (playerSelection == "paper") {
-    if (computerSelection == "paper") {
-      return "It's a draw!"
+      cpuScore == ++cpuScore
+      return "You lose! Paper beats Rock!";
     }
     else if (computerSelection == "scissors") {
-      return "You Lose! Scissors beats Paper!"
+      playerScore == ++playerScore;
+      return "You win! Rock beats Scissors!";
+    }
+  }
+  else if (playerSelection == "paper") {
+    if (computerSelection == "paper") {
+      return "It's a draw!";
+    }
+    else if (computerSelection == "scissors") {
+      cpuScore == ++cpuScore;
+      return "You lose! Scissors beats Paper!";
     }
     else if (computerSelection == "rock") {
-      return "You win! Paper beats Rock!"
+      playerScore == ++playerScore;
+      return "You win! Paper beats Rock!";
     }
   }
   else if (playerSelection == "scissors") {
     if (computerSelection == "scissors") {
-      return "It's a draw!"
+      return "It's a draw!";
     }
     else if (computerSelection == "rock") {
-      return "You lose! Rock beats Scissors!"
+      cpuScore == ++cpuScore;
+      return "You lose! Rock beats Scissors!";
     }
     else if (computerSelection == "paper") {
-      return "You win! Scissors beat Paper"
+      playerScore == ++playerScore;
+      return "You win! Scissors beats Paper";
     }
    }
  }
+function getScore() {
+   if (cpuScore == playerScore) {
+    return "Welp, the intense game concludes with an anticlimactic draw! You both lose!";
+  }
+  else if (cpuScore > playerScore) {
+    return "You lost the game! Try being better.";
+  }
+  else if (cpuScore < playerScore) {
+    return "Wow. You beat a computer, nice one pal.";
+  }
+  return;
+}
+function game() {
+  console.log(playRound());
+  console.log(playRound());
+  console.log(playRound());
+  console.log(playRound());
+  console.log(playRound());
+  console.log(getScore());
+  return;
+}
 </script>
