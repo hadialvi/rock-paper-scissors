@@ -1,5 +1,7 @@
 <script>
+
 // Function to pick randomly
+
 function computerPlay() {
 	let cpuNum = (Math.random() * 3);
 	return cpuNum < 1 ? "rock" : cpuNum < 2 ? "paper" : "scissors";
@@ -72,8 +74,6 @@ function getScore() {
   }
   return;
 }
-
-// Function to play a game of 5 rounds
 
 function game() {
   console.log(playRound());
